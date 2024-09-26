@@ -1,0 +1,54 @@
+Auteur : GILLES Eric
+Date : 26/09/2024
+Module : HAI916I
+
+Nom du Projet : MySchool
+
+
+Liste des prompts utilisés avec ChatGPT en Pair Programming
+pour développer une application mobile Android de cours/formation en ligne.
+
+
+CHATGPT
+
+Prompt 1 :
+
+Crée-moi une application mobile sous Android Studio avec Kotlin, Jetpack Compose et Firebase. 
+Cette application doit pouvoir proposer des cours/formation en ligne se basant sur l'application schoolmouv.
+(en lien de la prompt : le sujet du TP)
+
+Prompt 2 :
+
+Donne moi les dépendances nécessaires pour utiliser Jetpack Compose, Firebase et ... en utilisant le fichier libs.version.toml
+(en lien de la prompt : le fichier libs.version.toml généré par Android Studio)
+
+Prompt 3 :
+
+Maintenant que les dépendances sont réalisées, on peut maintenant réaliser les différentes classes Kotlin avec Jetpack Compose.
+
+Prompt 4 :
+Je souhaite réaliser un thème MySchoolTheme utilisé dans toute l'application afin de corriger les erreurs de la classe MainActivity
+
+
+Prompt 5 :
+Donne-moi le code des classes ViewModels que tu ne m'as pas fourni.
+
+Prompt 6 :
+J'ai un problème de type dans la classe AuthViewModel
+où le type NavController est envoyé à la méthode login qui demande un type Unit.
+
+
+
+GITHUB COPILOT
+
+Utilisation de Github Copilot pour corriger les erreurs générées par ChatGPT pour les classes suivantes :
+- MainActivity
+- ParentHomeScreen
+- StudentHomeScreen
+- CourseScreen
+- ProfileScreen
+- RegistrationScreen
+- LoginScreen
+- MySchoolTheme
+
+Prompt Github Copilot : "Fix errors in nom_de_la_classe.kt"

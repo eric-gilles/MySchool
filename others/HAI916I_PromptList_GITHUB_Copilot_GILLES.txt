@@ -1,0 +1,13 @@
+GITHUB COPILOT
+
+Utilisation de Github Copilot pour corriger les erreurs générées par ChatGPT pour les classes suivantes :
+- MainActivity
+- ParentHomeScreen
+- StudentHomeScreen
+- CourseScreen
+- ProfileScreen
+- RegistrationScreen
+- LoginScreen
+- MySchoolTheme
+
+Prompt Github Copilot : "Fix errors in nom_de_la_classe.kt"
