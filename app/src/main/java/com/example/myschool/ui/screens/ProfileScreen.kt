@@ -1,4 +1,4 @@
-package com.example.myschool.screens
+package com.example.myschool.ui.screens
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -8,14 +8,16 @@ import androidx.compose.foundation.layout.padding
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ParentHomeScreen(navController: NavController) {
+fun ProfileScreen(navController: NavController) {
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Accueil Parent") })
+            TopAppBar(title = { Text("Mon Profil") })
         }
     ) { contentPadding ->
+        // Logique pour afficher et gérer le profil de l'utilisateur
         Text(
-            text = "Bienvenue sur l'accueil parent",
+            text = "Gérer mon profil",
+            style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(contentPadding)
         )
     }

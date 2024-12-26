@@ -1,4 +1,4 @@
-package com.example.myschool.screens
+package com.example.myschool.ui.screens
 
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -8,17 +8,18 @@ import androidx.compose.foundation.layout.padding
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(navController: NavController) {
+fun CourseScreen(courseId: String, navController: NavController) {
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Mon Profil") })
+            TopAppBar(title = { Text("Détails du Cours") })
         }
     ) { contentPadding ->
-        // Logique pour afficher et gérer le profil de l'utilisateur
+        // Logique pour récupérer et afficher les détails du cours
         Text(
-            text = "Gérer mon profil",
+            text = "Détails du cours pour l'ID : $courseId",
             style = MaterialTheme.typography.headlineSmall,
             modifier = Modifier.padding(contentPadding)
         )
+        // Afficher la vidéo, les documents, les exercices, etc.
     }
 }
