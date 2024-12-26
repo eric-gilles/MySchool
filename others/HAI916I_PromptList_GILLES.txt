@@ -52,3 +52,10 @@ Utilisation de Github Copilot pour corriger les erreurs générées par ChatGPT 
 - MySchoolTheme
 
 Prompt Github Copilot : "Fix errors in nom_de_la_classe.kt"
+
+Utilisation de Github Copilot pour compléter les méthodes suivantes :
+- Classe AuthViewModel :
+    - sendPasswordResetEmail
+    - sendEmailVerification
+
+Prompt Github Copilot : "Complete this method"
