@@ -194,8 +194,8 @@ fun RegistrationScreen(navController: NavController, context: Context, viewModel
                             else -> {
                                 errorMessage = ""
                                 focusManager.clearFocus() //remove the focus from the text fields
-                                viewModel.register(
-                                    email, password,
+                                viewModel.registerParent(
+                                    name, firstname, email, password,
                                     onSuccess = {
                                         navController.navigate("login")
                                         viewModel.sendEmailVerification(
