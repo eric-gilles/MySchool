@@ -1,5 +1,6 @@
 package com.example.myschool.ui.assets
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
@@ -24,7 +25,7 @@ fun BottomNavigationBar(navController: NavController, userType: UserType) {
     )
 
     NavigationBar(
-        containerColor = Color.DarkGray,
+        containerColor = if (isSystemInDarkTheme()) Color.DarkGray else Color.LightGray,
         contentColor = Color.White
     ) {
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
