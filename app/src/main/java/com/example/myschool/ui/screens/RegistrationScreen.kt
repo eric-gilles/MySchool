@@ -47,7 +47,7 @@ import com.example.myschool.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RegistrationScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel()) {
+fun RegistrationScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
     var name by remember { mutableStateOf("") }
     var firstname by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }

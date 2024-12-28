@@ -27,7 +27,7 @@ import com.example.myschool.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel()) {
+fun LoginScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var errorMessage by remember { mutableStateOf("") }
@@ -161,6 +161,7 @@ fun LoginScreen(navController: NavController, context: Context, viewModel: AuthV
                             viewModel.login(
                                 email, password,
                                 onSuccess = {
+                                    viewModel.saveLoginState(email, selectedRole)
                                     when (selectedRole) {
                                         "Parent" -> navController.navigate("home/parent")
                                         "Teacher" -> navController.navigate("home/teacher")

@@ -1,5 +1,7 @@
 package com.example.myschool.viewmodels
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.myschool.models.User
@@ -11,9 +13,11 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 
-class AuthViewModel : ViewModel() {
+class AuthViewModel(context: Context) : ViewModel() {
     private val auth: FirebaseAuth = FirebaseAuth.getInstance() // Instance de Firebase Auth
     private val firestore = FirebaseFirestore.getInstance()  // Instance de Firestore
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences("MySchoolPrefs", Context.MODE_PRIVATE)
+
 
 
     // Fonction pour connecter un utilisateur
@@ -177,5 +181,38 @@ class AuthViewModel : ViewModel() {
             .addOnFailureListener { exception ->
                 onFailure(exception.message ?: "An unknown error occurred")
             }
+    }
+
+    // Méthodes pour gérer l'état de connexion
+    // Save login state
+    fun saveLoginState(email: String, role: String) {
+        with(sharedPreferences.edit()) {
+            putString("userEmail", email)
+            putString("userRole", role)
+            putBoolean("isLoggedIn", true)
+            apply()
+        }
+    }
+
+    // Clear login state (for logout)
+    fun clearLoginState() {
+        with(sharedPreferences.edit()) {
+            remove("userEmail")
+            remove("userRole")
+            putBoolean("isLoggedIn", false)
+            apply()
+        }
+    }
+
+    // Check if user is logged in
+    fun isLoggedIn(): Boolean {
+        return sharedPreferences.getBoolean("isLoggedIn", false)
+    }
+
+    // Retrieve saved user info
+    fun getUserInfo(): Pair<String, String?> {
+        val email = sharedPreferences.getString("userEmail", "")
+        val role = sharedPreferences.getString("userRole", null)
+        return Pair(email ?: "", role)
     }
 }

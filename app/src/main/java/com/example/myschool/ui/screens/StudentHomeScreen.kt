@@ -1,5 +1,6 @@
 package com.example.myschool.ui.screens
 
+import android.content.Context
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
@@ -18,7 +19,7 @@ import com.example.myschool.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun StudentHomeScreen(navController: NavController, viewModel: AuthViewModel = AuthViewModel()) {
+fun StudentHomeScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
     val userId = remember { viewModel.getCurrentUserId() }
     var user by remember { mutableStateOf<User?>(null) }
     var errorMessage by remember { mutableStateOf("") }

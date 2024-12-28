@@ -1,5 +1,6 @@
 package com.example.myschool.ui.screens
 
+import android.content.Context
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -19,7 +20,7 @@ import com.example.myschool.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileScreen(navController: NavController, viewModel: AuthViewModel = AuthViewModel()) {
+fun ProfileScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
     val context = LocalContext.current
     val userId = remember { viewModel.getCurrentUserId() }
     var user by remember { mutableStateOf<User?>(null) }

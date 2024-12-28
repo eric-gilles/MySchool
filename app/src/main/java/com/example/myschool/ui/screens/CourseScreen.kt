@@ -1,5 +1,6 @@
 package com.example.myschool.ui.screens
 
+import android.content.Context
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.*
@@ -21,7 +22,7 @@ import com.example.myschool.viewmodels.AuthViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CourseScreen(navController: NavController, viewModel: AuthViewModel = AuthViewModel()) {
+fun CourseScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
     val userId = remember { viewModel.getCurrentUserId() }
     var user by remember { mutableStateOf<User?>(null) }
     var errorMessage by remember { mutableStateOf("") }

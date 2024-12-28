@@ -14,17 +14,7 @@ import com.example.myschool.ui.screens.StudentHomeScreen
 import com.example.myschool.ui.screens.TeacherHomeScreen
 
 @Composable
-fun AppNavHost(navController: NavHostController, context: Context) {
-    val sharedPreferences = context.getSharedPreferences("MySchoolPrefs", Context.MODE_PRIVATE)
-    val isFirstTime = sharedPreferences.getBoolean("isFirstTime", true)
-
-    val startDestination = if (isFirstTime) {
-        sharedPreferences.edit().putBoolean("isFirstTime", false).apply()
-        "register"
-    } else {
-        "login"
-    }
-
+fun AppNavHost(navController: NavHostController, context: Context, startDestination: String) {
     NavHost(navController = navController, startDestination = startDestination) {
         composable("register") { RegistrationScreen(navController, context) }
         composable("login") { LoginScreen(navController, context) }
@@ -33,18 +23,18 @@ fun AppNavHost(navController: NavHostController, context: Context) {
             val userType = backStackEntry.arguments?.getString("UserType")
             when (userType) {
                 "parent" -> ParentHomeScreen(navController, context)
-                "student" -> StudentHomeScreen(navController)
-                "teacher" -> TeacherHomeScreen(navController)
+                "student" -> StudentHomeScreen(navController, context)
+                "teacher" -> TeacherHomeScreen(navController, context)
                 else -> ParentHomeScreen(navController, context)
             }
         }
 
-        composable("courses") { CourseScreen(navController) }
+        composable("courses") { CourseScreen(navController, context) }
         /*composable("course/{courseId}") { backStackEntry ->
             val courseId = backStackEntry.arguments?.getString("courseId")
             CourseScreen(navController)
         }*/
 
-        composable("profile") { ProfileScreen(navController) }
+        composable("profile") { ProfileScreen(navController, context) }
     }
 }
