@@ -29,15 +29,21 @@ fun AppNavHost(navController: NavHostController, context: Context) {
         composable("register") { RegistrationScreen(navController, context) }
         composable("login") { LoginScreen(navController, context) }
 
-        composable("home/parent") { ParentHomeScreen(navController) }
-        composable("home/student") { StudentHomeScreen(navController) }
-        composable("home/teacher") { TeacherHomeScreen(navController) }
-
-        //composable("courses") { CoursesScreen(navController) }
-        composable("course/{courseId}") { backStackEntry ->
-            val courseId = backStackEntry.arguments?.getString("courseId")
-            CourseScreen(courseId ?: "", navController)
+        composable("home/{UserType}") { backStackEntry ->
+            val userType = backStackEntry.arguments?.getString("UserType")
+            when (userType) {
+                "parent" -> ParentHomeScreen(navController, context)
+                "student" -> StudentHomeScreen(navController)
+                "teacher" -> TeacherHomeScreen(navController)
+                else -> ParentHomeScreen(navController, context)
+            }
         }
+
+        composable("courses") { CourseScreen(navController) }
+        /*composable("course/{courseId}") { backStackEntry ->
+            val courseId = backStackEntry.arguments?.getString("courseId")
+            CourseScreen(navController)
+        }*/
 
         composable("profile") { ProfileScreen(navController) }
     }
