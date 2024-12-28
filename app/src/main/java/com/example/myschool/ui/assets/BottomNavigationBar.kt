@@ -5,18 +5,18 @@ import androidx.compose.material.icons.filled.Book
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.example.myschool.models.UserType
 
 @Composable
-fun BottomNavigationBar(navController: NavController, UserType: UserType) {
+fun BottomNavigationBar(navController: NavController, userType: UserType) {
     val items = listOf(
         BottomNavItem.Home,
         BottomNavItem.Courses,
@@ -24,8 +24,8 @@ fun BottomNavigationBar(navController: NavController, UserType: UserType) {
     )
 
     NavigationBar(
-        containerColor = MaterialTheme.colorScheme.primary,
-        contentColor = MaterialTheme.colorScheme.onPrimary
+        containerColor = Color.DarkGray,
+        contentColor = Color.White
     ) {
         val currentRoute = navController.currentBackStackEntryAsState().value?.destination?.route
         items.forEach { item ->
