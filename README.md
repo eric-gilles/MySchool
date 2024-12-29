@@ -14,7 +14,7 @@ Cette application a été développée entièrement en utilisant [ChatGPT](https
 - Android 7.0 Nougat (API 24) ou supérieur
 
 ## Installation de l'application
-- Télécharger le fichier APK de l'application [MySchool](https://github.com/eric-gilles/MySchool/releases/download/v1.0/myschool.apk)
+- Télécharger le fichier APK de l'application [MySchool](https://github.com/eric-gilles/MySchool/releases/download/myschool/myschool.apk)
 
 
 Application aussi disponible en ligne sur le site [Appetize](https://appetize.io/) suivant :  
