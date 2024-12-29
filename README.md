@@ -5,6 +5,13 @@ Cette application a été développée dans le cadre de l'UE HAI916I - Intellige
 Montpellier](https://www.umontpellier.fr/).  
 Cette application a été développée entièrement en utilisant [ChatGPT](https://openai.com/chatgpt/overview/) et [GitHub Copilot](https://github.com/features/copilot) pour générer le code source de l'application et d'[Android Studio](https://developer.android.com/studio?hl=fr) pour les possibilités de refactorisation de code.
 
+## SonarQube
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eric-gilles_MySchool&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=eric-gilles_MySchool)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=eric-gilles_MySchool&metric=bugs)](https://sonarcloud.io/summary/new_code?id=eric-gilles_MySchool)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=eric-gilles_MySchool&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=eric-gilles_MySchool)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=eric-gilles_MySchool&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=eric-gilles_MySchool)
+
+
 ## Auteurs
 - [Eric GILLES](https://github.com/eric-gilles/)
 - [ChatGPT](https://openai.com/chatgpt/overview/)
