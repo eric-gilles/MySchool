@@ -30,11 +30,7 @@ fun AppNavHost(navController: NavHostController, context: Context, startDestinat
         }
 
         composable("courses") { CourseScreen(navController, context) }
-        /*composable("course/{courseId}") { backStackEntry ->
-            val courseId = backStackEntry.arguments?.getString("courseId")
-            CourseScreen(navController)
-        }*/
-
+        // Add a composable for the course details screen
         composable("profile") { ProfileScreen(navController, context) }
     }
 }

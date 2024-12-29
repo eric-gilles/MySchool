@@ -106,6 +106,7 @@ class AuthViewModel(context: Context) : ViewModel() {
     // Fonction pour se déconnecter
     fun logout() {
         auth.signOut()
+        clearLoginState()
     }
 
     // Vérifier si l'utilisateur est connecté
@@ -195,7 +196,7 @@ class AuthViewModel(context: Context) : ViewModel() {
     }
 
     // Clear login state (for logout)
-    fun clearLoginState() {
+    private fun clearLoginState() {
         with(sharedPreferences.edit()) {
             remove("userEmail")
             remove("userRole")

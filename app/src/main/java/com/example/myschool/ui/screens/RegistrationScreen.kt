@@ -177,8 +177,6 @@ fun RegistrationScreen(navController: NavController, context: Context, viewModel
                     )
                 }
 
-                //Spacer(modifier = Modifier.height(2.dp))
-
                 // Register Button
                 ElevatedButton(
                     onClick = {

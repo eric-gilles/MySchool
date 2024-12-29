@@ -9,7 +9,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
@@ -21,7 +20,6 @@ import com.example.myschool.viewmodels.AuthViewModel
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(navController: NavController, context: Context, viewModel: AuthViewModel = AuthViewModel(context)) {
-    val context = LocalContext.current
     val userId = remember { viewModel.getCurrentUserId() }
     var user by remember { mutableStateOf<User?>(null) }
     var link by remember { mutableStateOf("") }

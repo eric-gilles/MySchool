@@ -56,7 +56,7 @@ fun ParentHomeScreen(navController: NavController, context: Context, viewModel: 
             contentAlignment = Alignment.Center
         ) {
             Button(
-                onClick = { // TODO: Add action to add children
+                onClick = { // TO COMPLETE: Add action to add children
                     Toast.makeText(context, "Cette fonctionnalité sera bientôt disponible.", Toast.LENGTH_SHORT).show()
                 },
                 modifier = Modifier.padding(contentPadding).padding(start = 16.dp)
