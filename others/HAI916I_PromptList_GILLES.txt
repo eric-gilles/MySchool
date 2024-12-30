@@ -1,5 +1,5 @@
 Auteur : GILLES Eric
-Date : 26/09/2024
+Date : 30/12/2024
 Module : HAI916I
 
 Nom du Projet : MySchool
@@ -29,7 +29,6 @@ Maintenant que les dépendances sont réalisées, on peut maintenant réaliser l
 Prompt 4 :
 Je souhaite réaliser un thème MySchoolTheme utilisé dans toute l'application afin de corriger les erreurs de la classe MainActivity
 
-
 Prompt 5 :
 Donne-moi le code des classes ViewModels que tu ne m'as pas fourni.
 
@@ -37,7 +36,71 @@ Prompt 6 :
 J'ai un problème de type dans la classe AuthViewModel
 où le type NavController est envoyé à la méthode login qui demande un type Unit.
 
+Prompt 7 :
+Il y a le même problème pour la méthode register de AuthViewModel.
 
+Prompt 8 :
+Modifie l'écran de connexion pour avoir une apparence meilleure et plus moderne.
+
+Prompt 9 :
+Même chose pour l'écran d'inscription.
+
+Prompt 10 :
+Dans l'écran d'inscription, ajoutez 2 champs pour le nom et le prénom et un choix entre Parent ou Étudiant.
+
+Prompt 11 :
+Rends la page d'inscription défilable.
+
+Prompt 12 :
+Centrer le texte "Register as" et les RadioButtons dans cette page.
+
+Prompt 13 :
+Change la couleur de fond du bouton "S'inscrire" et de même pour le bouton "Se connecter".
+
+Prompt 14 :
+Ajoute un écran "TeacherHomeScreen" ainsi que la logique qui va avec.
+
+Prompt 15 :
+n'utilise pas Hilt et les cours sont stockés avec Firebase et ont la structure suivante :
+
+data class Course(
+    val id: String,
+    val title: String,
+    val description: String,
+    val teacherId: String
+)
+
+Prompt 16 :
+Ajoutez une vérification des entrées dans l'écran d'inscription (si vide/si un email)
+
+Prompt 17 :
+Ajoutez également une vérification sur l'écran de connexion :
+
+Prompt 18 :
+Modifiez pour enregistrer les données d'un nouvel utilisateur Parent dans FireStore lorsqu'il s'inscrit
+Voici le fichier registrationScreen.kt, le fichier AuthViewModel et le fichier User.kt :
++ fichier RegistrationScreen joint, + fichier AuthViewModel joint, + fichier User.kt joint
+
+Prompt 19 :
+Modifiez maintenant l'écran de profil pour afficher les données de Firestore 
+(Nom, prénom, email, type d'utilisateur en français, nombre d'enfants)
+Ajoutez également un champ et un bouton pour ajouter un lien (Facebook, Twitter, etc)
+Ajoutez un bouton pour se déconnecter
+Cette page doit être dans un style moderne comme la page d'inscription profileScreen.kt
++ fichier ProfileScreen joint
+
+Prompt 20 :
+Quelles sont les modifications dans AuthViewModel ? 
+
+Prompt 21 :
+Modifiez l'écran de profil pour utiliser la barre de navigation inférieure :
++ fichier BottomNavigation.kt joint
+
+Prompt 22 :
+Modifiez l'écran de connexion pour le rendre défilable
+
+Prompt 23 :
+Modifiez l'application pour implémenter une "Connexion Permanente" pour éviter de se connecter à chaque lancement de l'application
 
 GITHUB COPILOT
 
@@ -59,3 +122,7 @@ Utilisation de Github Copilot pour compléter les méthodes suivantes :
     - sendEmailVerification
 
 Prompt Github Copilot : "Complete this method"
+
+
+Prompt Github Copilot : "Generate a new class for the BottomNavigationBar with Home, Courses and Profile screens routes"
+Création de la classe BottomNavigationBar.kt
